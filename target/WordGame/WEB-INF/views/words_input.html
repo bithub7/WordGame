@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WordGame</title>
+    <style>
+        body, html{
+            background: #466368;
+            background: linear-gradient( #6495ed, #ffffff);
+            font-family: sans-serif;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+ <form class="form" th:method="POST" th:action="@{/words_view}" th:object="${words}">
+     <h2>Input words</h2>
+
+     <input type="text" th:field="*{word1}" id="word1"><br/>
+     <input type="text" th:field="*{word2}" id="word2"><br/>
+     <input type="text" th:field="*{word3}" id="word3"><br/>
+     <input type="text" th:field="*{word4}" id="word4"><br/>
+     <input type="text" th:field="*{word5}" id="word5"><br/>
+  <br/>
+  <input class="button" type="submit" value="find">
+</form>
+</body>
+</html>
